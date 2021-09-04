@@ -178,3 +178,9 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 " => EditorConfig (project-specific EditorConfig rule)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Config air-line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+
