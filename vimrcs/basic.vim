@@ -30,6 +30,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Don't make Vim vi-compatibile.
+set nocompatible
 " set line number
 set relativenumber
 " Sets how many lines of history VIM has to remember
@@ -190,7 +192,7 @@ set lbr
 set tw=500
 
 set ai "Auto indent
-set si "Smart indent
+"set si "Smart indent
 set wrap "Wrap lines
 
 
@@ -216,12 +218,13 @@ map <C-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
+map <leader>cc :TComment<CR>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-L> <C-W>l
+nmap <C-H> <C-W>h
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT

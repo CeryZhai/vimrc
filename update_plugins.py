@@ -64,7 +64,7 @@ editorconfig-vim https://github.com/editorconfig/editorconfig-vim
 dracula https://github.com/dracula/vim
 vim-airline https://github.com/vim-airline/vim-airline
 vim-airline-themes https://github.com/vim-airline/vim-airline-themes
-nerdcommenter https://github.com/preservim/nerdcommenter.git
+tcomment_vim https://github.com/tomtom/tcomment_vim
 """.strip()
 
 GITHUB_ZIP = "%s/archive/master.zip"
