@@ -139,6 +139,22 @@ let g:lightline = {
       \ 'subseparator': { 'left': ' ', 'right': ' ' }
       \ }
 
+let g:lightline.component_expand = {
+	      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_infos': 'lightline#ale#infos',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \}
+
+let g:lightline.component_type = {
+	      \     'linter_checking': 'right',
+      \     'linter_infos': 'right',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'right',
+      \}
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -152,20 +168,34 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Ale (syntax checker and linter)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'python': ['flake8'],
-\   'go': ['go', 'golint', 'errcheck']
-\}
+	\'javascript': ['eslint'],
+	\'python': ['pylint'],
+	\'go': ['go', 'golint', 'errcheck'],
+	\}
+
+let b:ale_python_pylint_executable = '/home/zhaixinyi/.local/bin/pylint'
+let g:ale_cpp_clang_options = '-std=c++1z -Wall'
+
+let g:ale_fixers = {
+	  \'*': ['prettier'],
+	  \'python': ['black'],
+	  \'cpp': ['clang-format'],
+	  \'sh': ['shfmt'],
+	  \}
+
+let g:ale_c_clangformat_options = '-style="{BasedOnStyle: google, IndentWidth: 4, AccessModifierOffset: -3, AlignAfterOpenBracket: AlwaysBreak}"'
+
 
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
 " Disabling highlighting
-let g:ale_set_highlights = 0
+let g:ale_set_highlights = 1
+let g:ale_sign_column_always = 0
 
 " Only run linting when saving the file
-let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
-
+let g:ale_sign_error = '💣'
+let g:ale_sign_warning = '💡'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
@@ -217,3 +247,6 @@ let g:airline_symbols.linenr = ''
 
 " auto-pairs
 let g:AutoPairsMapCh=0
+
+" git-blame
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>

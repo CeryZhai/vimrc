@@ -17,7 +17,7 @@ from os import path
 # --- Globals ----------------------------------------------
 PLUGINS = """
 auto-pairs https://github.com/jiangmiao/auto-pairs
-ale https://github.com/w0rp/ale
+ale https://github.com/dense-analysis/ale
 vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
 ack.vim https://github.com/mileszs/ack.vim
 bufexplorer https://github.com/jlanzarotta/bufexplorer
@@ -65,6 +65,8 @@ dracula https://github.com/dracula/vim
 vim-airline https://github.com/vim-airline/vim-airline
 vim-airline-themes https://github.com/vim-airline/vim-airline-themes
 tcomment_vim https://github.com/tomtom/tcomment_vim
+git-blame https://github.com/zivyangll/git-blame.vim
+tabular https://github.com/godlygeek/tabular
 """.strip()
 
 GITHUB_ZIP = "%s/archive/master.zip"
